@@ -13,9 +13,9 @@ export function Header() {
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link to="/" className="navbar-brand">
             The Shop
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"
