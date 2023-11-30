@@ -23,12 +23,12 @@ export function Content() {
 
   useEffect(handleIndexProducts, []);
   return (
-    <>
+    <div className="container">
       <ProductsIndex products={products} />
       <ProductsNew onCreateProduct={handleCreateProduct} />
       <Signup />
       <Login />
       <LogoutLink />
-    </>
+    </div>
   );
 }
