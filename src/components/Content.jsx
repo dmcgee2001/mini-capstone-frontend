@@ -5,9 +5,9 @@ import { ProductsIndex } from "./ProductsIndex";
 import { ProductsNew } from "./ProductsNew";
 import { CategoryIndex } from "./CategoryIndex";
 import { ProductsShowPage } from "./ProductsShow";
+import { Header } from "./Header";
 export function Content() {
   const [products, setProducts] = useState([]);
-
   const handleIndexProducts = () => {
     console.log("handleIndexProducts");
     axios.get("http://localhost:3000/products.json").then((response) => {
@@ -23,13 +23,16 @@ export function Content() {
 
   useEffect(handleIndexProducts, []);
   return (
-    <div className="container">
-      <Routes>
-        <Route path="/products" element={<ProductsIndex products={products} />} />
-        <Route path="/products/:id" element={<ProductsShowPage />} />
-        <Route path="/products/test" element={<CategoryIndex products={products} />} />
-        <Route path="/products/new" element={<ProductsNew onCreateProduct={handleCreateProduct} />} />
-      </Routes>
-    </div>
+    <>
+      <Header />
+      <div className="container">
+        <Routes>
+          <Route path="/products" element={<ProductsIndex products={products} />} />
+          <Route path="/products/:id" element={<ProductsShowPage />} />
+          <Route path="/products/test" element={<CategoryIndex products={products} />} />
+          <Route path="/products/new" element={<ProductsNew onCreateProduct={handleCreateProduct} />} />
+        </Routes>
+      </div>
+    </>
   );
 }

@@ -9,6 +9,7 @@ export function Header() {
     localStorage.removeItem("jwt");
     window.location.href = "/";
   };
+
   return (
     <header>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">

@@ -35,7 +35,9 @@ export function ProductsShowPage() {
       <div className="images">
         {product.images && product.images.map((image) => <img key={image.id} src={image.url} alt="" />)}
       </div>
-      <button onClick={handleCartProduct}>add to cart</button>
+      <button className="btn btn-primary" onClick={handleCartProduct}>
+        Add to cart
+      </button>
     </div>
   );
 }
