@@ -6,6 +6,7 @@ import { ProductsNew } from "./ProductsNew";
 import { CategoryIndex } from "./CategoryIndex";
 import { ProductsShowPage } from "./ProductsShow";
 import { Header } from "./Header";
+import { HomePage } from "./HomePage";
 export function Content() {
   const [products, setProducts] = useState([]);
   const handleIndexProducts = () => {
@@ -28,6 +29,7 @@ export function Content() {
       <div className="container">
         <Routes>
           <Route path="/products" element={<ProductsIndex products={products} />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/products/:id" element={<ProductsShowPage />} />
           <Route path="/products/test" element={<CategoryIndex products={products} />} />
           <Route path="/products/new" element={<ProductsNew onCreateProduct={handleCreateProduct} />} />
