@@ -7,7 +7,7 @@ export function ProductsShowPage() {
   const params = useParams();
 
   const handleShowProduct = () => {
-    axios.get(`https://mini-capstone-frontend-li7u.onrender.com/products/${params.id}.json`).then((response) => {
+    axios.get(`https://mini-capstone-api-g2sg.onrender.com/products/${params.id}.json`).then((response) => {
       setProduct(response.data);
     });
   };
@@ -16,7 +16,7 @@ export function ProductsShowPage() {
     const { id } = product;
     const cartedProduct = { product_id: id, quantity: 1 };
     axios
-      .post(`https://mini-capstone-frontend-li7u.onrender.com/carted_products.json`, cartedProduct)
+      .post(`https://mini-capstone-api-g2sg.onrender.com/carted_products.json`, cartedProduct)
       .then((response) => {
         console.log("Product added to cart:", response.data);
       })
