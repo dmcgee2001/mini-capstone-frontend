@@ -11,13 +11,13 @@ export function Content() {
   const [products, setProducts] = useState([]);
   const handleIndexProducts = () => {
     console.log("handleIndexProducts");
-    axios.get("https://mini-capstone-frontend-li7u.onrender.com").then((response) => {
+    axios.get("https://mini-capstone-frontend-li7u.onrender.com/products.json").then((response) => {
       console.log(response.data);
       setProducts(response.data);
     });
   };
   const handleCreateProduct = (params) => {
-    axios.post("https://mini-capstone-frontend-li7u.onrender.com", params).then((response) => {
+    axios.post("https://mini-capstone-frontend-li7u.onrender.com/products.json", params).then((response) => {
       setProducts([...products, response.data]);
     });
   };
